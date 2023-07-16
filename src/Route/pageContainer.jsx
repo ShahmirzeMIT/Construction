@@ -1,6 +1,7 @@
 import { AppBar, Box, Button,IconButton, Link, List, ListItem, ListItemButton, ListItemIcon, ListItemText, SwipeableDrawer, Toolbar, Typography } from "@mui/material"
 import styles from "../index.css";
 import { Fragment, useState } from "react";
+import {AiOutlineMenu} from "react-icons/ai"
 function PageConatiner({children}){
 	const menu=["Home","Axtaris","Haqqimizda","Elaqe"];
 	const [state, setState] =useState({
@@ -31,10 +32,10 @@ function PageConatiner({children}){
 		    {menu.map((text, index) => (
 			 <ListItem key={text} disablePadding>
 			   <ListItemButton>
-				<ListItemIcon>
-				#
-				</ListItemIcon>
-				<ListItemText primary={text} />
+				index==0 ?
+			  	 <Link href={"/"} underline="none" className="c-white"><ListItemText primary={text} /></Link>
+				:
+				<Link href={"/"+text} underline="none" className="c-white"><ListItemText primary={text}/></Link>
 			   </ListItemButton>
 			 </ListItem>
 		    ))}
@@ -59,6 +60,7 @@ function PageConatiner({children}){
 						<Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
 						News
 						</Typography>
+						<div className="hidden_true">
 						{
 							menu.map((item,i)=>{
 								return(
@@ -73,12 +75,14 @@ function PageConatiner({children}){
 								)
 								
 							})
-						}
+						}	
+						</div>
+						
 						<div>
 					{['right'].map((anchor) => (
-					<Fragment key={anchor}>
-						<div onClick={toggleDrawer(anchor, true)}>
-							{/* <AiOutlineMenu/> */} sss
+						<Fragment key={anchor} >
+						<div onClick={toggleDrawer(anchor, true)} className="hidden_false">
+							<AiOutlineMenu className="fs-25"/>
 							</div>
 						<SwipeableDrawer
 						anchor={anchor}
@@ -86,6 +90,7 @@ function PageConatiner({children}){
 						onClose={toggleDrawer(anchor, false)}
 						onOpen={toggleDrawer(anchor, true)}
 						>
+					
 						{list(anchor)}
 						</SwipeableDrawer>
 					</Fragment>

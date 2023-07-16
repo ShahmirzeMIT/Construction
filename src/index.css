@@ -62,3 +62,21 @@ code {
 .brown{
   background-color: #7c2c0c !important ;
 }
+.fs-25{
+  font-size: 25px;
+}
+.hidden_false{
+  display: none !important;
+}
+.hidden_true{
+  display: block;
+}
+
+@media only screen and (max-width: 600px) {
+  .hidden_false{
+    display: block !important;
+  }
+  .hidden_true{
+    display: none;
+  }
+}
