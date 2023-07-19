@@ -3,7 +3,7 @@ import styles from "../index.css";
 import { Fragment, useState } from "react";
 import {AiOutlineMenu} from "react-icons/ai"
 function PageConatiner({children}){
-	const menu=["Home","Axtaris","Haqqimizda","Elaqe"];
+	const menu=["Home","cats","Axtaris","Haqqimizda","Elaqe"];
 	const [state, setState] =useState({
 		top: false,
 		left: false,
