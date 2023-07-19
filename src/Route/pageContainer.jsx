@@ -18,7 +18,6 @@ function PageConatiner({children}){
 		) {
 		  return;
 		}
-	 
 		setState({ ...state, [anchor]: open });
 	   };
 	const list = (anchor) => (
@@ -32,10 +31,12 @@ function PageConatiner({children}){
 		    {menu.map((text, index) => (
 			 <ListItem key={text} disablePadding>
 			   <ListItemButton>
-				index==0 ?
+				{
+				index ===0 ?
 			  	 <Link href={"/"} underline="none" className="c-white"><ListItemText primary={text} /></Link>
 				:
 				<Link href={"/"+text} underline="none" className="c-white"><ListItemText primary={text}/></Link>
+				}
 			   </ListItemButton>
 			 </ListItem>
 		    ))}
