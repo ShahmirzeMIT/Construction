@@ -5,6 +5,7 @@ import Axtaris from "../Pages/axtaris";
 import Elaqe from "../Pages/elaqe";
 import NotFound from "../Pages/notfound";
 import GetCats from "../Pages/cats";
+import Joke from "../Features/joke";
 
 function Routing(){
 	return(
@@ -14,6 +15,7 @@ function Routing(){
 			<Route path="/axtaris"  element={<Axtaris/>}/>
 			<Route path="/elaqe"  element={<Elaqe/>}/>
 			<Route path="/cats"  element={<GetCats/>}/>
+			<Route path="/joke"  element={<Joke/>}/>
 			<Route path="*"  element={<NotFound/>}/>
 
 		</Routes>
